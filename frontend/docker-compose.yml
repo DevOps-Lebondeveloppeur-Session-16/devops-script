@@ -1,0 +1,5 @@
+services:
+  frontend:
+    image: talel12/front-session16
+    ports:
+      - 3007:80
