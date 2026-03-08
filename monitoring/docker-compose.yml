@@ -1,0 +1,16 @@
+services:
+  prometheus:
+    depends_on: [ node_exporter ]
+    #  cadvisor
+    image: prom/prometheus
+    container_name: prometheus
+    volumes:
+      - ./:/etc/prometheus/
+      - prometheus_data:/prometheus
+
+  node_exporter:
+    image: prom/node-exporter:latest
+    container_name: node_exporter
+    restart: unless-stopped
+    volumes:
+      - '/:/host:ro,rslave'
