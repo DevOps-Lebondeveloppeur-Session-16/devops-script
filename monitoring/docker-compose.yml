@@ -16,4 +16,4 @@ services:
       - '/:/host:ro,rslave'
 
 volumes:
-  - prometheus_data:
+  prometheus_data:
